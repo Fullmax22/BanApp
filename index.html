@@ -12,7 +12,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: #000;      
+      background: #000;       
       font-family: 'Inter', sans-serif;
       display: flex;
       justify-content: center;
@@ -124,15 +124,19 @@
     }
     #fecha { 
       top: calc((222px) * var(--escala)); 
-      left: calc((120px) * var(--escala)); 
+      left: 50%; 
+      transform: translateX(-50%);
       width: calc(300px * var(--escala)); /* Más largo */
+      text-align: center;
       --font-size: 14px; /* Tamaño personalizado para fecha */
       --font-weight: 400; /* Grosor normal */
     }
     #referencia { 
       top: calc((200px) * var(--escala)); 
-      left: calc((95px) * var(--escala)); 
+      left: 50%; 
+      transform: translateX(-50%);
       width: calc(300px * var(--escala)); /* Más largo */
+      text-align: center;
       --font-size: 14px; /* Tamaño personalizado para referencia */
       --font-weight: 400; /* Grosor normal */
     }
@@ -185,7 +189,7 @@
   <input type="text" id="referencia" class="input-overlay" readonly>
 </div>
 <button id="verPantallaCompleta">Ver en Pantalla Completa</button>
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>      
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>       
 <script>
 let claveAcceso = "2025142205";
 const claveAdmin = "1395";
@@ -230,7 +234,7 @@ document.getElementById('guardar-nueva-clave').addEventListener('click', () => {
 document.getElementById('generar').addEventListener('click', () => {
   if (!validarEntradas()) return;
   const container = document.getElementById('captura');
-  const img = document.querySelector('#captura img');      
+  const img = document.querySelector('#captura img');       
   const escala = Math.min(window.innerWidth / 390, 1);
   container.style.setProperty('--escala', escala);
   document.getElementById('pantalla').style.display = 'none';
